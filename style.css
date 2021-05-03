@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+html {
+  font-size: 62%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Nunito", sans-serif;
+  height: 100vh;
+  background: #06beb6;
+  background: -webkit-linear-gradient(to right, #48b1bf, #06beb6);
+  background: linear-gradient(to right, #48b1bf, #06beb6);
+  color: #333;
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+}
+main {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(3px);
+  filter: blur();
+  overflow: hidden;
+  display: flex;
+}
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.7s;
+}
+
+.name {
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  font-size: 4rem;
+}
+.score {
+  color: rgb(0, 63, 102);
+  font-size: 6.5rem;
+  font-weight: 200;
+  margin-bottom: auto;
+}
+
+.player--active {
+  background: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+.player--active .current {
+  opacity: 1;
+}
+.current {
+  padding: 1.7rem 5rem;
+  /* width: 100px; */
+  background: rgb(16, 98, 122);
+  border-radius: 9px;
+  opacity: 0.8;
+  text-align: center;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  color: #fff;
+}
+.current--label {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 2rem;
+  color: #ddd;
+  margin-bottom: 5px;
+}
+.current--score {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 300;
+
+  padding: 0.7rem 2.5rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
+  transition: all 0.2s;
+}
+
+.btn--new {
+  top: 4rem;
+}
+.btn--roll {
+  top: 40rem;
+}
+.btn--hold {
+  top: 46rem;
+}
+.btn--name0 {
+  outline: none;
+  text-align: center;
+  border: none;
+  top: 28rem;
+  cursor: text;
+}
+.btn--name1 {
+  text-align: center;
+
+  outline: none;
+  border: none;
+  top: 34rem;
+  cursor: text;
+}
+.btn--start {
+  top: 9rem;
+}
+.btn--modal {
+  bottom: 4rem;
+  outline: none;
+  border: none;
+}
+.btn:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+.dice {
+  position: absolute;
+  left: 50%;
+  /* right: 50%; */
+  top: 16.6rem;
+  transform: translate(-50%);
+  height: 10rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.15);
+}
+.hidden {
+  display: none;
+  transition: 0.5s ease-in;
+}
+.player--winner {
+  background: rgb(11, 76, 102);
+}
+.winner--0,
+.winner--1 {
+  bottom: 26rem;
+  position: absolute;
+  font-weight: 500;
+  font-size: 4rem;
+  color: #eee;
+  font-style: italic;
+}
+
+/* modal css */
+
+.show-modal {
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
+  border: none;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
+  cursor: pointer;
+  /* transition: 0.3s; */
+}
+.show-modal:hover {
+  background-color: #eee;
+  /* transition: 0.3s; */
+}
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+p {
+  font-size: 1.8rem;
+}
+/*  */
+/* classes to make modal work */
+
+.hidden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+/* Footer */
+/* .footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+}
+.footer p {
+  font-size: 1.4rem;
+} */

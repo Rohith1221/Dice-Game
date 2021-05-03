@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Dice Game</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <main>
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">0</p>
+        <p class="winner--0"></p>
+        <div class="current">
+          <p class="current--label">Score</p>
+          <p class="current--score" id="current--0">0</p>
+        </div>
+      </section>
+
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">0</p>
+        <p class="winner--1"></p>
+        <div class="current">
+          <p class="current--label">Score</p>
+          <p class="current--score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="./dice-5.png" alt="dice image" class="dice" />
+      <button class="btn btn--new">Newgame</button>
+      <input type="text" class="btn btn--name0" placeholder="Player One Name" />
+      <input type="text" class="btn btn--name1" placeholder="Player Two Name" />
+      <button class="btn btn--start">Start</button>
+      <button class="btn btn--roll">Roll dice</button>
+      <button class="btn btn--hold">Hold</button>
+      <button class="btn btn--modal">Instructions</button>
+      <!-- <div class="footer">
+        <p>madde by Rohith</p>
+      </div> -->
+    </main>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times</button>
+      <h1 style="text-align: center">Instructions</h1>
+      <p>1. Enter the players name and you're ready to start</p>
+      <p>2. First player who gets score greater than or equal to 100 wins</p>
+      <p>3. Roll the dice add up your score till you roll a '1'</p>
+      <p>4. You pass on the dice if you get a 1</p>
+      <p>5. click hold to save your score and pass on the dice</p>
+      <p>6. Enter shift to play new game with different players</p>
+      <p>7. press esc or X symbol to exit Instructions</p>
+      <p>8. You will get to know better if you play once , lessgoo !</p>
+      <br />
+      <p style="text-align: center; font-size: 1.5rem">Made by Rohith 💻</p>
+    </div>
+    <div class="overlay hidden"></div>
+    <script src="./script.js" async defer></script>
+  </body>
+</html>
