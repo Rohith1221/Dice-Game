@@ -166,3 +166,5 @@ openmodal.addEventListener("click", function () {
     }
   });
 });
+
+document.addEventListener('contextmenu', event => event.preventDefault());
