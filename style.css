@@ -118,6 +118,8 @@ main {
 }
 
 .btn--new {
+  outline:none;
+  border:none;
   top: 4rem;
 }
 .btn--roll {
